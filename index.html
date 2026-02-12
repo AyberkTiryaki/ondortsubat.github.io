@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>14 Şubat Nereye Gidelim?</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
+        text-align: center;
+        padding-top: 80px;
+        color: white;
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 50px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        font-size: 28px;
+        padding: 20px 40px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        background: white;
+        color: #ff4d6d;
+        transition: transform 0.2s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>💘 14 Şubat’ta Nereye Gidelim?</h1>
+
+<div class="container">
+    <button onclick="grow(this)">Sivas</button>
+    <button onclick="grow(this)">Sivas</button>
+    <button onclick="grow(this)">Sivas</button>
+    <button onclick="grow(this)">Sivas</button>
+</div>
+
+<script>
+function grow(btn) {
+    let currentScale = btn.dataset.scale || 1;
+    currentScale = parseFloat(currentScale) + 0.2;
+    btn.dataset.scale = currentScale;
+    btn.style.transform = `scale(${currentScale})`;
+}
+</script>
+
+</body>
+</html>
