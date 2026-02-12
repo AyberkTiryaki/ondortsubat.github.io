@@ -58,11 +58,11 @@
 let scale = 1;
 
 function growSivas() {
-    scale += 6;   // büyüme miktarı (istersen arttır)
+    scale += 3;   // büyüme miktarı (istersen arttır)
     const sivas = document.getElementById("sivas");
     sivas.style.transform = `scale(${scale})`;
 
-    if (scale > 6) {
+    if (scale > 3) {
         sivas.innerHTML = "💖 SİVAS KAZANDI 💖";
     }
 }
