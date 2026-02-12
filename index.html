@@ -9,36 +9,38 @@
         font-family: Arial, sans-serif;
         background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
         text-align: center;
-        padding-top: 80px;
+        padding-top: 100px;
         color: white;
+        overflow: hidden;
     }
 
     h1 {
         font-size: 42px;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 
-    .container {
+    .buttons {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 40px;
     }
 
     button {
         font-size: 28px;
-        padding: 20px 40px;
+        padding: 20px 50px;
         border: none;
-        border-radius: 15px;
+        border-radius: 16px;
         cursor: pointer;
         background: white;
         color: #ff4d6d;
-        transition: transform 0.2s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        z-index: 2;
     }
 
-    button:hover {
-        transform: scale(1.05);
+    #sivas {
+        position: relative;
+        z-index: 10;
     }
 </style>
 </head>
@@ -47,20 +49,28 @@
 
 <h1>💘 14 Şubat’ta Nereye Gidelim?</h1>
 
-<div class="container">
-    <button onclick="grow(this)">Sivas</button>
-    <button onclick="grow(this)">Sivas</button>
-    <button onclick="grow(this)">Sivas</button>
-    <button onclick="grow(this)">Sivas</button>
+<div class="buttons">
+    <button id="sivas">Sivas</button>
+    <button onclick="growSivas()">Başka Bir Yer</button>
 </div>
 
 <script>
-function grow(btn) {
-    let currentScale = btn.dataset.scale || 1;
-    currentScale = parseFloat(currentScale) + 0.2;
-    btn.dataset.scale = currentScale;
-    btn.style.transform = `scale(${currentScale})`;
+let scale = 1;
+
+function growSivas() {
+    scale += 0.7;   // büyüme miktarı (istersen arttır)
+    const sivas = document.getElementById("sivas");
+    sivas.style.transform = `scale(${scale})`;
+
+    if (scale > 6) {
+        sivas.innerHTML = "💖 SİVAS KAZANDI 💖";
+    }
 }
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
